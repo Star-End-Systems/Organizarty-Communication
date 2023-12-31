@@ -1,4 +1,5 @@
 import { Report, StatusCode } from "@expressots/core";
+import { BrevoEmailSender } from "@providers/email-senders/brevo-emailsender";
 import { LocalEmailSender } from "@providers/email-senders/local-emailsender";
 import { provide } from "inversify-binding-decorators";
 import { SendEmailConfirmationRequest, SendEmailConfirmationResponse } from "./send-email-confirmation.dto";
@@ -6,7 +7,8 @@ import { SendEmailConfirmationRequest, SendEmailConfirmationResponse } from "./s
 @provide(SendEmailConfirmationUseCase)
 export class SendEmailConfirmationUseCase {
   constructor(
-    private emailSender: LocalEmailSender,
+    private emailSender: BrevoEmailSender,
+    private emailSender2: LocalEmailSender,
     private report: Report,
   ) { }
 

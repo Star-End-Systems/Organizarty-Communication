@@ -6,11 +6,11 @@ import { IEmailSender } from "./email-sender.interface";
 export class LocalEmailSender implements IEmailSender {
   constructor(private log: Logger) { }
 
-  greetingEmail(targetEmail: string): void {
+  async greetingEmail(targetEmail: string): Promise<void> {
     this.log.info(`Hello ${targetEmail}`, LocalEmailSender.name);
   }
 
-  confirmationEmail(targetEmail: string, code: string): void {
+  async confirmationEmail(targetEmail: string, code: string): Promise<void> {
     this.log.info(`Confirm code for ${targetEmail} is => ${code} <= `, LocalEmailSender.name);
   }
 

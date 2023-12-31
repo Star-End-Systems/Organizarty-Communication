@@ -1,4 +1,4 @@
 export interface IEmailSender {
-  greetingEmail(targetEmail: string): void;
-  confirmationEmail(targetEmail: string, code: string): void;
+  greetingEmail(targetEmail: string): Promise<void>;
+  confirmationEmail(targetEmail: string, code: string): Promise<void>;
 }
