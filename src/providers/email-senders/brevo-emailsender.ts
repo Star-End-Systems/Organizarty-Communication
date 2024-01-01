@@ -38,7 +38,7 @@ export class BrevoEmailSender implements IEmailSender {
   async sendEmail(targetEmail: string, htmlContent: string): Promise<any> {
     const url = `${this.BASE_URL}/smtp/email`;
 
-    var html = this.baseHtml(htmlContent);
+    const html = this.baseHtml(htmlContent);
 
     const data = this.base_body(targetEmail, html);
 
